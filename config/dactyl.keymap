@@ -2,6 +2,18 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+&lt {
+    tapping-term-ms = <150>;
+    quick-tap-ms = <150>;
+    flavor = "hold-preferred";
+};
+
+&mt {
+    tapping-term-ms = <150>;
+    quick-tap-ms = <150>;
+    flavor = "hold-preferred";
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -80,49 +92,30 @@
     };
 
     behaviors {
-        new_mt: new_mt {
+        hrm_l: hrm_l {
             compatible = "zmk,behavior-hold-tap";
-            label = "NEW_MT";
+            label = "HRM_L";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "hold-preferred";
-        };
-
-        new_lt: new_lt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NEW_LT";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-        };
-
-        left_hrm: left_hrm {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_HRM";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
             hold-trigger-key-positions = <28 27 26 25 48 49 50 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 51 52 0>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <150>;
+            hold-while-undecided;
         };
 
-        right_hrm: right_hrm {
+        hrm_r: hrm_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_HRM";
+            label = "HRM_R";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
             hold-trigger-key-positions = <12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 31 32 33 34 52 51 0>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <150>;
+            hold-while-undecided;
         };
     };
 
@@ -131,12 +124,12 @@
 
         layer_0 {
             bindings = <
-&kp SPACE             &none  &none                     &none                 &none                         &none              &none             &none                   &none                   &none                       &none                             &none
-&kp TILDE             &kp Q  &kp W                     &kp E                 &kp R                         &kp T              &kp Y             &kp U                   &kp I                   &kp O                       &kp P                             &kp PIPE
-&kp LS(LA(LC(LGUI)))  &kp A  &left_hrm LEFT_CONTROL S  &left_hrm LEFT_ALT D  &left_hrm LEFT_GUI F          &kp G              &kp H             &right_hrm RIGHT_GUI J  &right_hrm RIGHT_ALT K  &right_hrm RIGHT_CONTROL L  &right_hrm RIGHT_SHIFT SEMICOLON  &kp APOS
-&kp GRAVE             &kp Z  &kp X                     &kp C                 &kp V                         &kp B              &kp N             &kp M                   &kp COMMA               &kp DOT                     &kp SLASH                         &kp BACKSLASH
-                                                       &kp TAB               &new_mt LEFT_SHIFT BACKSPACE  &new_lt 1 ENTER    &new_lt 2 ESCAPE  &kp F16
-                                                                             &none                         &none              &none
+&kp SPACE             &none  &none                  &none              &none                     &none          &none      &none               &none               &none                   &none                         &none
+&kp TILDE             &kp Q  &kp W                  &kp E              &kp R                     &kp T          &kp Y      &kp U               &kp I               &kp O                   &kp P                         &kp PIPE
+&kp LS(LA(LC(LGUI)))  &kp A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LEFT_GUI F         &kp G          &kp H      &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp APOS
+&kp GRAVE             &kp Z  &kp X                  &kp C              &kp V                     &kp B          &kp N      &kp M               &kp COMMA           &kp DOT                 &kp SLASH                     &kp BACKSLASH
+                                                    &kp TAB            &mt LEFT_SHIFT BACKSPACE  &lt 1 ENTER    &lt 2 ESC  &kp F16
+                                                                       &none                     &none          &none
             >;
 
             trackball-bindings = <&tmv_coarse>;
@@ -155,12 +148,12 @@
 
         layer_2 {
             bindings = <
-&mo 8   &none   &none    &none    &none    &none          &none           &none           &none            &none            &none                 &none
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INSERT     &kp C_MUTE      &kp PAGE_UP     &kp PAGE_DOWN    &kp C_PLAY       &kp DELETE            &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp HOME       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP           &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC  &trans
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp END        &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp C_NEXT       &kp C_BRIGHTNESS_DEC  &trans
-                         &trans   &trans   &lt 3 ENTER    &trans          &trans
-                                  &none    &none          &none
+&mo 8   &none   &none    &none    &none    &none         &none           &none           &none            &none            &none                 &none
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INSERT    &kp C_MUTE      &kp PAGE_UP     &kp PAGE_DOWN    &kp C_PLAY       &kp DELETE            &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp HOME      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP           &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC  &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp END       &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp C_NEXT       &kp C_BRIGHTNESS_DEC  &trans
+                         &trans   &trans   &mo 3         &trans          &trans
+                                  &none    &none         &none
             >;
         };
 
@@ -177,12 +170,12 @@
 
         layer_4 {
             bindings = <
-&kp SPACE             &none  &none                     &none                 &none                         &none              &none             &none                  &none                  &none                      &none                            &none
-&kp TILDE             &kp Q  &kp W                     &kp E                 &kp R                         &kp T              &kp Y             &kp U                  &kp I                  &kp O                      &kp P                            &kp PIPE
-&kp LS(LA(LC(LGUI)))  &kp A  &left_hrm LEFT_CONTROL S  &left_hrm LEFT_GUI D  &left_hrm LEFT_ALT F          &kp G              &kp H             &right_hrm LEFT_ALT J  &right_hrm LEFT_GUI K  &right_hrm LEFT_CONTROL L  &right_hrm LEFT_SHIFT SEMICOLON  &kp APOS
-&kp GRAVE             &kp Z  &kp X                     &kp C                 &kp V                         &kp B              &kp N             &kp M                  &kp COMMA              &kp DOT                    &kp SLASH                        &kp BACKSLASH
-                                                       &kp TAB               &new_mt LEFT_SHIFT BACKSPACE  &new_lt 5 ENTER    &new_lt 6 ESCAPE  &kp RIGHT_ALT
-                                                                             &none                         &none              &none
+&kp SPACE             &none  &none                  &none              &none                     &none          &none      &none              &none              &none                  &none                        &none
+&kp TILDE             &kp Q  &kp W                  &kp E              &kp R                     &kp T          &kp Y      &kp U              &kp I              &kp O                  &kp P                        &kp PIPE
+&kp LS(LA(LC(LGUI)))  &kp A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_GUI D  &hrm_l LEFT_ALT F         &kp G          &kp H      &hrm_r LEFT_ALT J  &hrm_r LEFT_GUI K  &hrm_r LEFT_CONTROL L  &hrm_r LEFT_SHIFT SEMICOLON  &kp APOS
+&kp GRAVE             &kp Z  &kp X                  &kp C              &kp V                     &kp B          &kp N      &kp M              &kp COMMA          &kp DOT                &kp SLASH                    &kp BACKSLASH
+                                                    &kp TAB            &mt LEFT_SHIFT BACKSPACE  &lt 5 ENTER    &lt 6 ESC  &kp RIGHT_ALT
+                                                                       &none                     &none          &none
             >;
         };
 
@@ -199,12 +192,12 @@
 
         layer_6 {
             bindings = <
-&mo 8   &none   &none    &none    &none    &none          &none           &none           &none            &none            &none                 &none
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INSERT     &kp C_MUTE      &kp PAGE_UP     &kp PAGE_DOWN    &kp C_PLAY       &kp DELETE            &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp HOME       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP           &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC  &trans
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp END        &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp C_NEXT       &kp C_BRIGHTNESS_DEC  &trans
-                         &trans   &trans   &lt 7 ENTER    &trans          &trans
-                                  &none    &none          &none
+&mo 8   &none   &none    &none    &none    &none         &none           &none           &none            &none            &none                 &none
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INSERT    &kp C_MUTE      &kp PAGE_UP     &kp PAGE_DOWN    &kp C_PLAY       &kp DELETE            &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp HOME      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP           &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC  &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp END       &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp C_NEXT       &kp C_BRIGHTNESS_DEC  &trans
+                         &trans   &trans   &mo 7         &trans          &trans
+                                  &none    &none         &none
             >;
         };
 
@@ -221,12 +214,12 @@
 
         layer_8 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &bootloader    &bootloader  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans         &trans       &trans
-                                &trans  &trans         &trans
+&trans  &none  &none  &none  &none   &none          &none        &none  &none  &none  &none  &none
+&none   &none  &none  &none  &none   &bootloader    &bootloader  &none  &none  &none  &none  &none
+&none   &none  &none  &none  &none   &none          &none        &none  &none  &none  &none  &none
+&none   &none  &none  &none  &none   &none          &none        &none  &none  &none  &none  &none
+                      &none  &trans  &trans         &trans       &none
+                             &none   &none          &none
             >;
         };
     };
