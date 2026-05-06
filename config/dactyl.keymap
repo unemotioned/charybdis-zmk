@@ -129,6 +129,7 @@
         compatible = "zmk,keymap";
 
         mac_base {
+            display-name="Mac Base";
             bindings = <
 &kp SPACE              &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
 &kp TILDE              &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
@@ -140,6 +141,7 @@
         };
 
         mac_num {
+            display-name="Mac Num";
             bindings = <
 &trans  &none      &none     &none     &none     &none        &none      &none      &none      &none     &none      &none
 &trans  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
@@ -151,6 +153,7 @@
         };
 
         mac_nav {
+            display-name="Mac Nav";
             bindings = <
 &mo 8   &none   &none    &none    &none    &none       &none       &none         &none         &none             &none         &none
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INS     &kp C_MUTE  &kp PG_UP     &kp PG_DN     &kp C_PLAY_PAUSE  &kp DEL       &trans
@@ -162,6 +165,7 @@
         };
 
         mac_util {
+            display-name="Mac Util";
             bindings = <
 &none  &none  &none  &none          &none          &none        &none                 &none                 &none           &none         &none         &none
 &none  &none  &none  &none          &none          &my_email    &bt BT_CLR            &bt BT_SEL 0          &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
@@ -173,6 +177,7 @@
         };
 
         win_base {
+            display-name="Win Base";
             bindings = <
 &kp SPACE              &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
 &kp TILDE              &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
@@ -184,6 +189,7 @@
         };
 
         win_num {
+            display-name="Win Num";
             bindings = <
 &trans  &none      &none     &none              &none     &none        &none      &none      &none      &none     &none      &none
 &trans  &kp EXCL   &kp AT    &kp HASH           &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
@@ -195,6 +201,7 @@
         };
 
         win_nav {
+            display-name="Win Nav";
             bindings = <
 &mo 8   &none   &none    &none    &none    &none       &none       &none         &none         &none             &none         &none
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp INS     &kp C_MUTE  &kp PG_UP     &kp PG_DN     &kp C_PLAY_PAUSE  &kp DEL       &trans
@@ -206,6 +213,7 @@
         };
 
         win_util {
+            display-name="Win Util";
             bindings = <
 &none  &none  &none  &none          &none          &none        &none       &none         &none         &none         &none         &none
 &none  &none  &none  &none          &none          &my_email    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
@@ -217,6 +225,7 @@
         };
 
         boot {
+            display-name="Boot";
             bindings = <
 &trans  &none  &none  &none  &none   &none          &none        &none  &none  &none  &none  &none
 &none   &none  &none  &none  &none   &bootloader    &bootloader  &none  &none  &none  &none  &none
