@@ -2,7 +2,7 @@ file_format: "1"
 id: charybdis
 name: Charybdis
 type: shield
-url: httPs://github.com/Bastardkb/Charybdis/
+url: https://github.com/Bastardkb/Charybdis/
 requires: [pro_micro]
 features:
   - keys
