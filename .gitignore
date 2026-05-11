@@ -1,6 +1,7 @@
 .west/
 build/
 modules/
+output/
 zephyr/
 zmk/
 
