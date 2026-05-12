@@ -47,7 +47,7 @@ build_target build/right "$shield_right" "$controller"
 
 mkdir -p output
 cp build/left/zephyr/zmk.uf2 output/"${shield_left}".uf2
-cp build/right/zephyr/zmk.uf2 output/"${shield_left}".uf2
+cp build/right/zephyr/zmk.uf2 output/"${shield_right}".uf2
 [ -f build/settings_reset/zephyr/zmk.uf2 ] && cp build/settings_reset/zephyr/zmk.uf2 output/settings_reset.uf2
 
 echo -e "\n----------------------------------------------"
