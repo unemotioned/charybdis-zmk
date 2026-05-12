@@ -2,7 +2,7 @@
 
 How to build ZMK keyboard firmware locally without Docker on apple silicon mac.
 
-> ***Note:*** This `README.md` is only about commands and instructions — you don't
+> **_Note:_** This `README.md` is only about commands and instructions — you don't
 > need to clone this repository to build yours locally.
 
 Build time difference:
@@ -95,6 +95,9 @@ You may need to run `west update` multiple times before everything downloads suc
 
 ```sh
 west init -l config
+
+# this takes some time, and create some directories
+#   which should be included in .gitignore
 west update
 ```
 
@@ -114,6 +117,9 @@ export ZEPHYR_SDK_INSTALL_DIR=$HOME/zephyr-sdk-0.17.0
 ```
 
 which is in `zephyr_env.sh` that gets sourced by `build.sh` when executed
+
+> **_NOTE:_** `west init -l config`, `west update`, `west zephyr-export` command
+> must be run on each zmk repo if you have them separate.
 
 ---
 
@@ -204,7 +210,7 @@ The resulting firmware files will be located at:
 2. Source Zephyr SDK env var
 3. Build left, right and reset files (reset file is commented out)
 4. copy `.uf2` files to output directory at project root
-5. Prompt to open the `output` directory (***Nay*** by default)
+5. Prompt to open the `output` directory (**_Nay_** by default)
 
 execute with:
 
