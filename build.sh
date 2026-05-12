@@ -6,12 +6,14 @@ shield_left='charybdis_left'
 shield_right='charybdis_right'
 controller='nice_nano_v2'
 
+venv_dir="$HOME/venv/zmk"
+
 # absolute path to script's directory not where you ran it
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$SCRIPT_DIR"
 
 # activate python venv
-source "$SCRIPT_DIR/.venv/bin/activate"
+source "$venv_dir/bin/activate"
 
 # source Zephyr SDK env var
 source "$SCRIPT_DIR/zephyr_env.sh"

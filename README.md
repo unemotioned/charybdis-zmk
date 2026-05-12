@@ -45,8 +45,9 @@ cd charybdis-zmk
 ### 2. Create Python venv
 
 ```sh
-python3 -m venv .venv  # create it at current directory
-source .venv/bin/activate
+mkdir -p ~/venv # create dir for venvs
+python3 -m venv ~/venv/zmk  # create zmk named venv under the ~/venv
+source ~/venv/zmk/bin/activate
 pip3 install -U pip  # update the pip itself
 ```
 
