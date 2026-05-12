@@ -203,6 +203,7 @@ The resulting firmware files will be located at:
 2. Source Zephyr SDK env var
 3. Build left, right and reset files (reset file is commented out)
 4. copy `.uf2` files to output directory at project root
+5. Prompt to open the `output` directory (***Nay*** by default)
 
 execute with:
 

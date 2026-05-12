@@ -13,7 +13,7 @@ ROOT_DIR="$SCRIPT_DIR"
 # activate python venv
 source "$SCRIPT_DIR/.venv/bin/activate"
 
-# source Zephyr SDK env
+# source Zephyr SDK env var
 source "$SCRIPT_DIR/zephyr_env.sh"
 
 # make sure west to use repo dir
@@ -51,4 +51,9 @@ cp build/right/zephyr/zmk.uf2 output/"${shield_left}".uf2
 echo -e "\n----------------------------------------------"
 echo -e "\n Build done. (took ${SECONDS}s)"
 echo -e "\n uf2 files are copied to the output directory."
-echo -e "\n----------------------------------------------"
+echo -e "\n----------------------------------------------\n"
+
+read -rp 'Open output directory with finder? [y/N]: ' answer
+if [[ "${answer,,}" == 'y' ]]; then
+  open ./output
+fi
