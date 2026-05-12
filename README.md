@@ -2,10 +2,18 @@
 
 How to build ZMK keyboard firmware locally without Docker on apple silicon mac.
 
-| Build Method         | Time        | Speedup        |
-| -------------------- | ----------- | -------------- |
-| GitHub Actions       | ~2 minutes  | 1x             |
-| Local (Apple M1 Pro) | ~12 seconds | **10x faster** |
+> ***Note:*** This `README.md` is only about commands and instructions — you don't
+> need to clone this repository to build yours locally.
+
+Build time difference:
+
+| Build Method         | Time            | Speedup        |
+| -------------------- | --------------- | -------------- |
+| GitHub Actions       | ~2 minutes      | 1x             |
+| Local (Apple M1 Pro) | **~12 seconds** | **10x faster** |
+
+> GitHub action is significantly slower because every action it executed on
+> fresh VM environment.
 
 ## Table of Contents
 
@@ -17,7 +25,7 @@ How to build ZMK keyboard firmware locally without Docker on apple silicon mac.
   - [5. Initialize West and Fetch Dependencies](#5-initialize-west-and-fetch-dependencies)
   - [6. Export Zephyr Environment](#6-export-zephyr-environment)
 
-- [Build the Firmware](#build-the-firmware)
+- [Build Commands](#build-commands)
 
 - [Build Script](#build-script)
 
@@ -37,9 +45,9 @@ cd charybdis-zmk
 ### 2. Create Python venv
 
 ```sh
-python3 -m venv .venv
+python3 -m venv .venv  # create it at current directory
 source .venv/bin/activate
-pip3 install -U pip
+pip3 install -U pip  # update the pip itself
 ```
 
 ---
@@ -108,7 +116,7 @@ which is in `zephyr_env.sh` that gets sourced by `build.sh` when executed
 
 ---
 
-## Build the Firmware
+## Build Commands
 
 What each options do:
 
@@ -179,9 +187,7 @@ west build \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 ```
 
----
-
-### Generated Firmware Files
+#### Generated Firmware Files
 
 The resulting firmware files will be located at:
 
