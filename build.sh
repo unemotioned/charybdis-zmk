@@ -18,6 +18,10 @@ source "$venv_dir/bin/activate"
 # source Zephyr SDK env var
 source "$SCRIPT_DIR/zephyr_env.sh"
 
+# remove Homebrew injected flags only for this script
+unset CPPFLAGS
+unset LDFLAGS
+
 # make sure west to use repo dir
 cd "$ROOT_DIR"
 
