@@ -152,6 +152,14 @@ What each options do:
   still reference older policy versions, so this prevents configuration errors
   during build generation.
 
+### Build with Display
+
+- If your using [nice view](https://nicekeyboards.com/nice-view/) display change
+  the keyboard name to `"charybdis_left nice_view"`
+  or to `"charybdis_left nice_view_adapter nice_view`
+
+---
+
 ### Build Left Half
 
 ```sh
