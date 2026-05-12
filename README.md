@@ -24,10 +24,9 @@ Build time difference:
   - [4. Install Zephyr SDK](#4-install-zephyr-sdk)
   - [5. Initialize West and Fetch Dependencies](#5-initialize-west-and-fetch-dependencies)
   - [6. Export Zephyr Environment](#6-export-zephyr-environment)
-
 - [Build Commands](#build-commands)
-
 - [Build Script](#build-script)
+- [TroubleShooting](#troubleshooting)
 
 ---
 
@@ -228,4 +227,52 @@ execute with:
 
 ---
 
-### Happy Remapping 🎉
+## TroubleShooting
+
+### `Invalid SHIELD;`
+
+If you have the `board/` outside `config/` then west will not find it and fail
+at build time.
+
+Add following option at the `$ west build` to make it look at `board/` under
+project root.
+
+```sh
+west build -DBOARD_ROOT="$PWD"
+```
+
+Like this:
+
+```sh
+west build \
+    -d build/left \
+    -p always \
+    -b nice_nano_v2 \
+    -s zmk/app \
+    -- \
+    -DSHIELD="charybdis_left" \
+    -DZMK_CONFIG="$PWD/config" \
+    -DBOARD_ROOT="$PWD" \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+```
+
+In the `build.sh` change it to:
+
+```sh
+  west build \
+    -d "$build_dir" \
+    -p always \
+    -b "$controller" \
+    -s zmk/app \
+    -- \
+    -DSHIELD="$shield" \
+    -DZMK_CONFIG="$ROOT_DIR/config" \
+    -DBOARD_ROOT="$ROOT_DIR" \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+```
+
+> Or move `board/` under `config/`.
+
+---
+
+#### Happy Remapping 🎉
