@@ -67,8 +67,16 @@
             layers = <4>;
         };
 
-        tilde {
-            bindings = <&kp TILDE>;
+        sqt {
+            bindings = <&kp SQT>;
+            key-positions = <31 32>;
+            timeout-ms=<40>;
+            slow-release;
+            layers = <0 4>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
             key-positions = <43 44>;
             layers = <0 4>;
         };
@@ -79,9 +87,9 @@
             layers = <0 4>;
         };
 
-        sqt {
-            bindings = <&kp SQT>;
-            key-positions = <31 32>;
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <43 35>;
             layers = <0 4>;
         };
 
