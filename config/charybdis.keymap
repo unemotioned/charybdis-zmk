@@ -70,13 +70,61 @@
         lt {
             bindings = <&kp LT>;
             key-positions = <43 44>;
-            layers = <0 1 4 5>;
+            layers = <1 5>;
         };
 
         gt {
             bindings = <&kp GT>;
             key-positions = <44 45>;
-            layers = <0 1 4 5>;
+            layers = <1 5>;
+        };
+
+        under {
+            bindings = <&kp UNDER>;
+            key-positions = <43 44>;
+            layers = <0 4>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <44 45>;
+            layers = <0 4>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <15 14>;
+            layers = <0 4>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <15 16>;
+            layers = <0 4>;
+        };
+
+        bslh {
+            bindings = <&kp BSLH>;
+            key-positions = <19 20>;
+            layers = <0 4>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <20 21>;
+            layers = <0 4>;
+        };
+
+        sqt {
+            bindings = <&kp SQT>;
+            key-positions = <31 32>;
+            layers = <0 4>;
+        };
+
+        dqt {
+            bindings = <&kp DQT>;
+            key-positions = <32 33>;
+            layers = <0 4>;
         };
     };
 
@@ -127,12 +175,12 @@
 
         mac_base {
             bindings = <
-&kp SPACE               &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
-&kp TILDE               &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
-&kp LC(LA(LG(LSHIFT)))  &kp A  &hrm_l LCTRL S  &hrm_l LALT D  &hrm_l LGUI F   &kp G          &kp H      &hrm_r RGUI J  &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHFT SEMI  &kp SQT
-&kp GRAVE               &kp Z  &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &kp BSLH
-                                               &kp TAB        &mt LSHFT BSPC  &lt 1 ENTER    &lt 2 ESC  &kp F16
-                                                              &none           &none          &none
+&kp SPACE  &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
+&none      &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &none
+&none      &kp A  &hrm_l LCTRL S  &hrm_l LALT D  &hrm_l LGUI F   &kp G          &kp H      &hrm_r RGUI J  &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHFT SEMI  &none
+&none      &kp Z  &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &none
+                                  &kp TAB        &mt LSHFT BSPC  &lt 1 ENTER    &lt 2 ESC  &kp F16
+                                                 &none           &none          &none
             >;
         };
 
