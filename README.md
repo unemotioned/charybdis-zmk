@@ -132,7 +132,8 @@ What each options do:
 
 - `-p always`: Performs a pristine build by cleaning previous build artifacts
   first. This helps avoid stale-cache issues when changing configs, shields, or
-  board definitions. (Decrease from 12 sec to 10 sec without it.)
+  board definitions. (**_You can remove this options is you only change keymaps
+  file. Which sill reduce build time._**)
 
 - `-b nice_nano_v2`: Targets the nice!nano v2 microcontroller board.
 
