@@ -49,10 +49,27 @@ build_target build/right "$shield_right" "$controller"
 # NOTE: Uncomment the following line to build the "settings_reset.uf2" file.
 # build_target build/settings_reset settings_reset "$controller"
 
-mkdir -p output
-cp build/left/zephyr/zmk.uf2 output/"${shield_left}".uf2
-cp build/right/zephyr/zmk.uf2 output/"${shield_right}".uf2
-[ -f build/settings_reset/zephyr/zmk.uf2 ] && cp build/settings_reset/zephyr/zmk.uf2 output/settings_reset.uf2
+mkdir -p output/bak
+
+# backup to bak/
+[ -f output/"$shield_left".uf2 ] &&
+  mv output/"$shield_left".uf2 output/bak
+
+[ -f output/"$shield_right".uf2 ] &&
+  mv output/"$shield_right".uf2 output/bak
+
+[ -f output/settings_reset.uf2 ] &&
+  mv output/settings_reset.uf2 output/bak
+
+# copy the built uf2 to output/
+[ -f build/left/zephyr/zmk.uf2 ] &&
+  cp build/left/zephyr/zmk.uf2 output/"$shield_left".uf2
+
+[ -f build/right/zephyr/zmk.uf2 ]  &&
+  cp build/right/zephyr/zmk.uf2 output/"$shield_right".uf2
+
+[ -f build/settings_reset/zephyr/zmk.uf2 ] &&
+  cp build/settings_reset/zephyr/zmk.uf2 output/settings_reset.uf2
 
 echo -e "\n----------------------------------------------"
 echo -e "\n Build done. (took ${SECONDS}s)"
