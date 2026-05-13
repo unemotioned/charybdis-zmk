@@ -19,6 +19,30 @@
     combos {
         compatible = "zmk,combos";
 
+        under {
+            bindings = <&kp UNDER>;
+            key-positions = <43 44>;
+            layers = <0 4>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <44 45>;
+            layers = <0 4>;
+        };
+
+        lt {
+            bindings = <&kp LT>;
+            key-positions = <43 44>;
+            layers = <1 5>;
+        };
+
+        gt {
+            bindings = <&kp GT>;
+            key-positions = <44 45>;
+            layers = <1 5>;
+        };
+
         mac_cut {
             bindings = <&kp LG(X)>;
             key-positions = <38 40>;
@@ -65,24 +89,6 @@
             bindings = <&kp LC(Z)>;
             key-positions = <37 38>;
             layers = <4>;
-        };
-
-        under {
-            bindings = <&kp UNDER>;
-            key-positions = <43 44>;
-            layers = <0 4>;
-        };
-
-        lt {
-            bindings = <&kp LT>;
-            key-positions = <43 44>;
-            layers = <1 5>;
-        };
-
-        gt {
-            bindings = <&kp GT>;
-            key-positions = <44 45>;
-            layers = <1 5>;
         };
     };
 
