@@ -19,30 +19,6 @@
     combos {
         compatible = "zmk,combos";
 
-        under {
-            bindings = <&kp UNDER>;
-            key-positions = <43 44>;
-            layers = <0 4>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <44 45>;
-            layers = <0 4>;
-        };
-
-        lt {
-            bindings = <&kp LT>;
-            key-positions = <43 44>;
-            layers = <1 5>;
-        };
-
-        gt {
-            bindings = <&kp GT>;
-            key-positions = <44 45>;
-            layers = <1 5>;
-        };
-
         mac_cut {
             bindings = <&kp LG(X)>;
             key-positions = <38 40>;
@@ -89,6 +65,46 @@
             bindings = <&kp LC(Z)>;
             key-positions = <37 38>;
             layers = <4>;
+        };
+
+        sqt {
+            bindings = <&kp SQT>;
+            key-positions = <31 32>;
+            layers = <0 4>;
+            timeout-ms = <35>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <32 33>;
+            layers = <0 4>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <43 44>;
+            layers = <0 4>;
+            timeout-ms = <35>;
+        };
+
+        bslh {
+            bindings = <&kp BSLH>;
+            key-positions = <44 45>;
+            layers = <0 4>;
+            timeout-ms = <35>;
+        };
+
+
+        lt {
+            bindings = <&kp LT>;
+            key-positions = <43 44>;
+            layers = <1 5>;
+        };
+
+        gt {
+            bindings = <&kp GT>;
+            key-positions = <44 45>;
+            layers = <1 5>;
         };
     };
 
@@ -139,12 +155,12 @@
 
         mac_base {
             bindings = <
-&kp SPACE              &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
-&kp TILDE              &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
-&kp LC(LA(LG(LSHFT)))  &kp A  &hrm_l LCTRL S  &hrm_l LALT D  &hrm_l LGUI F   &kp G          &kp H      &hrm_r RGUI J  &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHFT SEMI  &kp SQT
-&kp GRAVE              &kp Z  &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &kp BSLH
-                                              &kp TAB        &mt LSHFT BSPC  &lt 1 ENTER    &lt 2 ESC  &kp F16
-                                                             &none           &none          &none
+&kp SPACE              &none                       &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
+&kp TILDE              &kp Q                       &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
+&kp LC(LA(LG(LSHFT)))  &hrm_l LC(LA(LG(LSHFT))) A  &hrm_l LCTRL S  &hrm_l LALT D  &hrm_l LGUI F   &kp G          &kp H      &hrm_r RGUI J  &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHFT SEMI  &kp SQT
+&kp GRAVE              &kp Z                       &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &kp BSLH
+                                                                   &kp TAB        &mt LSHFT BSPC  &lt 1 ENTER    &lt 2 ESC  &kp F16
+                                                                                  &none           &none          &none
             >;
         };
 
@@ -183,12 +199,12 @@
 
         win_base {
             bindings = <
-&kp SPACE               &none  &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
-&kp TILDE               &kp Q  &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
-&kp LC(LA(LG(LSHIFT)))  &kp A  &hrm_l LCTRL S  &hrm_l LGUI D  &hrm_l LALT F   &kp G          &kp H      &hrm_r LALT J  &hrm_r LGUI K  &hrm_r LCTRL L  &hrm_r LSHFT SEMI  &kp SQT
-&kp GRAVE               &kp Z  &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &kp BSLH
-                                               &kp TAB        &mt LSHFT BSPC  &lt 5 ENTER    &lt 6 ESC  &kp RALT
-                                                              &none           &none          &none
+&kp SPACE               &none                       &none           &none          &none           &none          &none      &none          &none          &none           &none              &none
+&kp TILDE               &kp Q                       &kp W           &kp E          &kp R           &kp T          &kp Y      &kp U          &kp I          &kp O           &kp P              &kp PIPE
+&kp LC(LA(LG(LSHIFT)))  &hrm_l LC(LA(LG(LSHFT))) A  &hrm_l LCTRL S  &hrm_l LGUI D  &hrm_l LALT F   &kp G          &kp H      &hrm_r LALT J  &hrm_r LGUI K  &hrm_r LCTRL L  &hrm_r LSHFT SEMI  &kp SQT
+&kp GRAVE               &kp Z                       &kp X           &kp C          &kp V           &kp B          &kp N      &kp M          &kp COMMA      &kp DOT         &kp SLASH          &kp BSLH
+                                                                    &kp TAB        &mt LSHFT BSPC  &lt 5 ENTER    &lt 6 ESC  &kp RALT
+                                                                                   &none           &none          &none
             >;
         };
 
