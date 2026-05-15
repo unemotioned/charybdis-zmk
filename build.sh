@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# NOTE: Change the keyboard names and controller type from here.
+# NOTE: Change the keyboard names, controller type and etc from here.
 shield_left='charybdis_left'
 shield_right='charybdis_right'
 controller='nice_nano_v2'
-
+build_reset=false
 venv_dir="$HOME/venv/zmk"
 
 # absolute path to script's directory not where you ran it
@@ -46,8 +46,10 @@ build_target() {
 
 build_target build/left "$shield_left" "$controller"
 build_target build/right "$shield_right" "$controller"
-# NOTE: Uncomment the following line to build the "settings_reset.uf2" file.
-# build_target build/settings_reset settings_reset "$controller"
+
+if [ "$build_reset" = true ]; then
+  build_target build/settings_reset settings_reset "$controller"
+fi
 
 mkdir -p output/bak
 
@@ -68,7 +70,7 @@ mkdir -p output/bak
 [ -f build/right/zephyr/zmk.uf2 ]  &&
   cp build/right/zephyr/zmk.uf2 output/"$shield_right".uf2
 
-[ -f build/settings_reset/zephyr/zmk.uf2 ] &&
+[[ "$build_reset" = true && -f build/settings_reset/zephyr/zmk.uf2 ]] &&
   cp build/settings_reset/zephyr/zmk.uf2 output/settings_reset.uf2
 
 echo -e "\n----------------------------------------------"
