@@ -78,7 +78,7 @@ echo -e "\n Build done. (took ${SECONDS}s)"
 echo -e "\n uf2 files are copied to the output directory."
 echo -e "\n----------------------------------------------\n"
 
-read -rp 'Open output directory with finder? [y/N]: ' answer
-if [[ "${answer,,}" == 'y' ]]; then
+read -rp 'Open output directory with finder? [Y/n]: ' answer
+if [[ -z "${answer,,}" || "${answer,,}" == 'y' ]]; then
   open ./output
 fi

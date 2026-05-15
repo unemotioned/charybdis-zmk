@@ -219,7 +219,7 @@ The resulting firmware files will be located at:
 3. Build left, right and reset files (reset file is commented out)
 4. Backup previously built firmware files to `output/bak/`
 5. Copy `.uf2` files to output directory at project root
-6. Prompt to open the `output` directory (**_Nay_** by default)
+6. Prompt to open the `output` directory (default: **_Yay_**)
 
 execute with:
 
