@@ -29,9 +29,10 @@ build_target() {
   local shield="$2"
   local controller="$3"
 
+  # NOTE: Add the following option in "$ west build" before the "--" to build cleanly
+  # -p always \
   west build \
     -d "$build_dir" \
-    -p always \
     -b "$controller" \
     -s zmk/app \
     -- \
