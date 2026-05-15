@@ -70,13 +70,14 @@
         sqt {
             bindings = <&kp SQT>;
             key-positions = <31 32>;
-            layers = <0 4>;
             timeout-ms = <35>;
+            layers = <0 4>;
         };
 
         minus {
             bindings = <&kp MINUS>;
             key-positions = <32 33>;
+            timeout-ms = <35>;
             layers = <0 4>;
         };
 
@@ -84,14 +85,12 @@
             bindings = <&kp GRAVE>;
             key-positions = <43 44>;
             layers = <0 4>;
-            timeout-ms = <35>;
         };
 
         bslh {
             bindings = <&kp BSLH>;
             key-positions = <44 45>;
             layers = <0 4>;
-            timeout-ms = <35>;
         };
 
 
