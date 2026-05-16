@@ -15,15 +15,14 @@
 
 &mt { quick-tap-ms = <175>; };
 
+//  0 <- right half center thumb key
+// 12 13 14 15 16 17   18 19 20 21 22 23
+// 24 25 26 27 28 29   30 31 32 33 34 35
+// 36 37 38 39 40 41   42 43 44 45 46 47
+//          48 49 50   51 52
+
 / {
     combos {
-        // Matrix
-        //  0  1  2  3  4  5    6  7  8  9 10 11 12
-        // 13 14 15 16 17 18   19 20 21 22 23 24 25
-        // 26 27 28 29 30 31   32 33 34 35 36 37 38
-        // 39 40 41 42 43 44   45 46 47 48 49 50 51
-        //          52 53 54   55 56
-        //             57 58   59
 
         compatible = "zmk,combos";
 
@@ -115,14 +114,14 @@
 
         youtube_normal {
             bindings = <&youtube_normal>;
-            key-positions = <27 26>;
+            key-positions = <26 27>;
             timeout-ms = <35>;
             layers = <0 4>;
         };
 
         youtube_double {
             bindings = <&youtube_double>;
-            key-positions = <28 27>;
+            key-positions = <27 28>;
             timeout-ms = <35>;
             layers = <0 4>;
         };
