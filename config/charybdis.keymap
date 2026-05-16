@@ -17,6 +17,15 @@
 
 / {
     combos {
+
+        // Matrix
+        //  0  1  2  3  4  5    6  7  8  9 10 11 12
+        // 13 14 15 16 17 18   19 20 21 22 23 24 25
+        // 26 27 28 29 30 31   32 33 34 35 36 37 38
+        // 39 40 41 42 43 44   45 46 47 48 49 50 51
+        //          52 53 54   55 56
+        //             57 58   59
+
         compatible = "zmk,combos";
 
         mac_cut {
@@ -105,6 +114,20 @@
             key-positions = <44 45>;
             layers = <1 5>;
         };
+
+        youtube_normal {
+            bindings = <&youtube_normal>;
+            key-positions = <28 29>;
+            timeout-ms = <35>;
+            layers = <0 4>;
+        };
+
+        youtube_double {
+            bindings = <&youtube_double>;
+            key-positions = <29 30>;
+            timeout-ms = <35>;
+            layers = <0 4>;
+        };
     };
 
     macros {
@@ -120,6 +143,21 @@
             #binding-cells = <0>;
             bindings = <&kp LS(U) &kp N &kp LS(E) &kp M &kp O &kp T &kp I &kp O &kp N &kp E &kp LS(D)>;
             label = "MY_ALIAS";
+        };
+
+        // Change YouTube playback speed after entering input mode of Vimium
+        youtube_normal: youtube_normal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp LT &kp LT &kp LT &kp LT &kp ESC>;
+            label = "YOUTUBE_NORMAL";
+        };
+
+        youtube_double: youtube_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp GT &kp GT &kp GT &kp GT &kp ESC>;
+            label = "YOUTUBE_DOUBLE";
         };
     };
 
