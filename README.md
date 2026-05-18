@@ -1,6 +1,7 @@
 # Charybdis ZMK
 
-How to build ZMK keyboard firmware locally without Docker on apple silicon mac.
+How to build ZMK keyboard firmware locally without Docker on apple silicon mac
+and Arch Linux.
 
 > **_Note:_** This `README.md` is only about commands and instructions — you don't
 > need to clone this repository to build yours locally.
@@ -26,7 +27,14 @@ Build time difference:
   - [6. Export Zephyr Environment](#6-export-zephyr-environment)
 - [Build Commands](#build-commands)
 - [Build Script](#build-script)
+
+- [Arch Linux](#arch-linux)
+  - [3. Dependencies](#3-dependencies)
+  - [4. Zephyr SDK](#4-zephyr-sdk)
+
 - [TroubleShooting](#troubleshooting)
+  - [Configuring Incomplete](#configuring-incomplete-errors-occurred)
+  - [Invalid SHIELD](#invalid-shield)
 
 ---
 
@@ -49,6 +57,8 @@ python3 -m venv ~/venv/zmk  # create zmk named venv under the ~/venv
 source ~/venv/zmk/bin/activate
 pip3 install -U pip  # update the pip itself
 ```
+
+Go to [Arch linux step 3 - Install Dependencies](#3-dependencies)
 
 ---
 
@@ -229,7 +239,47 @@ execute with:
 
 ---
 
+## Arch Linux
+
+### 3. Dependencies
+
+```sh
+sudo pacman -S cmake ninja gperf python ccache qemu dtc wget openocd llvm base-devel
+pip install west pyelftools
+```
+
+```sh
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### 4. Zephyr SDK
+
+x86 architecture linux
+
+```sh
+cd ~
+
+wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.17.0/zephyr-sdk-0.17.0_linux-x86_64.tar.xz
+tar xvf zephyr-sdk-0.17.0_linux-x86_64.tar.xz
+
+cd zephyr-sdk-0.17.0
+./setup.sh
+
+rm ~/zephyr-sdk-0.17.0_linux-x86_64.tar.xz
+```
+
+Go to [step 5 - Initialize West](#5-initialize-west-and-fetch-dependencies)
+
+---
+
 ## TroubleShooting
+
+### `Configuring incomplete, errors occurred!`
+
+Remove `build` directory and then try running `build.sh` again.
+
+---
 
 ### `Invalid SHIELD;`
 
