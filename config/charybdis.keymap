@@ -112,15 +112,15 @@
             layers = <1 5>;
         };
 
-        youtube_normal {
-            bindings = <&youtube_normal>;
+        youtube_speed_down {
+            bindings = <&youtube_speed_down>;
             key-positions = <26 27>;
             timeout-ms = <35>;
             layers = <0 4>;
         };
 
-        youtube_double {
-            bindings = <&youtube_double>;
+        youtube_speed_up {
+            bindings = <&youtube_speed_up>;
             key-positions = <27 28>;
             timeout-ms = <35>;
             layers = <0 4>;
@@ -143,19 +143,18 @@
         };
 
         // Change YouTube playback speed after entering input mode of Vimium
-
-        youtube_normal: youtube_normal {
+        youtube_speed_down: youtube_speed_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp I &kp LT &kp LT &kp LT &kp LT &kp ESC>;
-            label = "YOUTUBE_NORMAL";
+            label = "YOUTUBE_SPEED_DOWN";
         };
 
-        youtube_double: youtube_double {
+        youtube_speed_up: youtube_speed_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp I &kp GT &kp GT &kp GT &kp GT &kp ESC>;
-            label = "YOUTUBE_DOUBLE";
+            label = "YOUTUBE_SPEED_UP";
         };
     };
 
