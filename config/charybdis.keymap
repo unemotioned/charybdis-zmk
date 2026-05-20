@@ -168,7 +168,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <0 18 19 20 21 22 23 26 27 28 30 31 32 33 34 35 42 43 44 45 46 47 48 49 50 51 52>;
+            hold-trigger-key-positions = <0 18 19 20 21 22 23 25 26 27 28 30 31 32 33 34 35 42 43 44 45 46 47 48 49 50 51 52>;
         };
 
         hrm_r: hrm_r {
